@@ -22,4 +22,3 @@ class CalcTests(SimpleTestCase):
 
         self.assertEqual(res, -791)
         self.assertNotEquals(res, -790)
-        
