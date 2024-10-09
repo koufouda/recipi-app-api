@@ -14,7 +14,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         """Entry point for call"""
         self.stdout.write('Waiting for the database....')
-        db_up=False
+        db_up = False
         while db_up is False:
             try:
                 self.check(databases=['default'])
@@ -24,5 +24,3 @@ class Command(BaseCommand):
                 time.sleep(1)
 
         self.stdout.write(self.style.SUCCESS('Database is UP and OK'))
-
-

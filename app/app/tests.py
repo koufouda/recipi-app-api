@@ -20,5 +20,5 @@ class CalcTests(SimpleTestCase):
         """Test substract numbers together"""
         res = calc.subtract(-2, 789)
 
-        self.assertEqual(res, -791)   
-        self.assertNotEquals(res, -790)     
+        self.assertEqual(res, -791)
+        self.assertNotEquals(res, -790)
