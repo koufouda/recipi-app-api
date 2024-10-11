@@ -1,5 +1,6 @@
 """
-Django ADmin customization."""
+Django ADmin customization.
+"""
 
 
 from django.contrib import admin
@@ -14,7 +15,7 @@ class UserAdmin(BaseUserAdmin):
     ordering = ['id']
     list_display = ['email', 'name', 'password', 'is_staff']
     fieldsets = (
-        (None,{'fields': ('email', 'password')}),
+        (None,{'fields': ('email', 'password', 'name',) }),
         ( _('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser')}),
         ( _('Important_dates'), {'fields': ('last_login',)}),
     )
@@ -30,8 +31,8 @@ class UserAdmin(BaseUserAdmin):
                 'is_active',
                 'is_staff',
                 'is_superuser',
-            )
-        })
+            ),
+        }),
     )
 
 
