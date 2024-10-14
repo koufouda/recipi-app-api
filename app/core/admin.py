@@ -9,15 +9,17 @@ from django.utils.translation import gettext_lazy as _
 
 from core import models
 
+
 class UserAdmin(BaseUserAdmin):
     """Define the admin pages for users."""
 
     ordering = ['id']
     list_display = ['email', 'name', 'password', 'is_staff']
     fieldsets = (
-        (None,{'fields': ('email', 'password', 'name',) }),
-        ( _('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser')}),
-        ( _('Important_dates'), {'fields': ('last_login',)}),
+        (None, {'fields': ('email', 'password', 'name', )}),
+        (_('Permissions'),
+         {'fields': ('is_active', 'is_staff', 'is_superuser')}),
+        (_('Important_dates'), {'fields': ('last_login',)}),
     )
     readonly_fields = ['last_login', 'is_superuser']
     add_fieldsets = (
