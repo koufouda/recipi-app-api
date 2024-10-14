@@ -1,4 +1,4 @@
-""""
+"""
 URLS mappings for the user API.
 """
 
