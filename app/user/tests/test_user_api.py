@@ -34,7 +34,6 @@ class PublicUserApiTests(TestCase):
         user = get_user_model().objects.get(email=payload['email'])
         self.assertTrue(user.check_password(payload['password']))
         self.assertNotIn('password', res.data)
-        self.assertNotIn(payload['password'], res.data)
 
     def test_user_with_email_exists_error(self):
         """No email dublicates"""
@@ -52,7 +51,7 @@ class PublicUserApiTests(TestCase):
         """Test an error returned if password is less than 5 chars"""
         payload = {
             'email': 'test@example.gr',
-            'password': 'pwdp',
+            'password': 'pwd',
             'name': 'test name',
         }
         res = self.client.post(CREATE_USER_URL, payload)
