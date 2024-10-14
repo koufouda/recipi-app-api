@@ -1,5 +1,5 @@
 """
-Django ADmin customization.
+Django Admin customization.
 """
 
 
